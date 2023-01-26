@@ -4,10 +4,7 @@ class Solution {
         HashMap<Character, Integer> hashMap = new HashMap<Character, Integer>();
 
         for(int i = 0; i < s.length(); i++){
-            if(hashMap.containsKey(s.charAt(i))){
-                hashMap.computeIfPresent(s.charAt(i), (k,v) -> v + 1);
-            }
-            else hashMap.put(s.charAt(i), 1);
+            hashMap.put(s.charAt(i),hashMap.getOrDefault(s.charAt(i),0)+1);
         }
 
         int result = 0;
